@@ -5,8 +5,6 @@ Created on 23 sty 2014
 '''
 # -*- coding: utf-8 -*-
 
-from bibliotekav0 import Biblioteka as bibl
-from biblioteka import Biblioteka as bibla
 import datetime
 
 today = datetime.datetime.now()
