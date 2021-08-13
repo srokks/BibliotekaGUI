@@ -8,9 +8,9 @@ ID Buttonow
     zaloguj=21
     ok(panel_login)=22
     back(panel_login)=23
-    wyporzycza=25
+    wypozycza=25
     oddaje=26
-    ok_wyporzycza=28
+    ok_wypozycza=28
     od_oddaje=29
     powrot(z choicces)=30
     wyswietl wypozyczone=31
@@ -103,7 +103,7 @@ class MainWindow(wx.Frame):
     def d_panelChoices(self):
         panel=wx.Panel(self,-1)
         box=wx.BoxSizer(wx.HORIZONTAL)
-        box.Add(wx.Button(panel,25,'Wyporzycza'),0)
+        box.Add(wx.Button(panel,25,'Wypozycza'),0)
         box.Add(wx.Button(panel,26,'Oddaje'),0)
         self.Bind(wx.EVT_BUTTON,self.onShowBooksToBorrow,id=25)
         self.Bind(wx.EVT_BUTTON,self.onShowBooksBack,id=26)
@@ -186,6 +186,11 @@ class MainWindow(wx.Frame):
             gbox.Add(wx.StaticText(panel,label='| KTO?'),0)
             for row in bibl().getBooks():
                 if(bibl().getBooksState()[i][1]==0):
+                    '''FIXME: przy ponownym uruchomieniu wyrzuca poniższy blad
+                    File "C:/Users/Jarek Sroka/OneDrive/Projekty/python/Biblioteka/src/biblgui.py", line 189, in d_panelBorowed
+                    gbox.Add(wx.StaticText(panel,label='| '+row[2]),0,wx.EXPAND,5)
+                    wx._core.wxAssertionError: C++ assertion "Assert failure" failed at ..\..\src\common\sizer.cpp(1401) in wxGridSizer::DoInsert():
+                    too many items (10 > 3*3) in grid sizer (maybe you should omit the number of either rows or columns?)'''
                     gbox.Add(wx.StaticText(panel,label='| '+row[2]),0,wx.EXPAND,5)
                     gbox.Add(wx.StaticText(panel,label='| '+'"'+row[1]+'"'),0)
                     gbox.Add(wx.StaticText(panel,label='| '+users[(bibl().getBooksState()[i][2])-1][1]),0)
