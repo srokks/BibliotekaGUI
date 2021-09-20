@@ -16,3 +16,6 @@ Wszelkie dane zapisane w bazie sqlite.
 
 #### MOŻNA GO URUCHOMIĆ RAZ PÓŹNIEJ WYWALA BŁĄD
 
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
